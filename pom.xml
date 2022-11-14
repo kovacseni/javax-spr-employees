@@ -69,10 +69,23 @@
 			<scope>test</scope>
 		</dependency>
 
+<!--		Hibernate Envers (audit naplózás-->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-envers</artifactId>
 			<version>${hibernate.version}</version>
+		</dependency>
+
+<!--		Actuatorok cache-hez-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+<!--		Redis cache szerver-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
 
 	</dependencies>
@@ -97,6 +110,8 @@
 							<version>${mapstruct.version}</version>
 						</path>
 					</annotationProcessorPaths>
+					<source>16</source>
+					<target>16</target>
 				</configuration>
 			</plugin>
 
