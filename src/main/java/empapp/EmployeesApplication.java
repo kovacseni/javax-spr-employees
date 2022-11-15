@@ -12,6 +12,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 //@EnableJpaAuditing
 
 // Ütemezett feladatok
+// Aszinkron hívás (Servlet)
 //@EnableAsync
 
 // Cache

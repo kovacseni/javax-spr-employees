@@ -2,6 +2,7 @@ package empapp;
 
 import empapp.dto.CreateEmployeeCommand;
 import empapp.dto.EmployeeDto;
+//import empapp.dto.EmployeeHasBeenCreatedEvent;
 import empapp.dto.UpdateEmployeeCommand;
 import empapp.entity.Employee;
 import lombok.AllArgsConstructor;
@@ -10,6 +11,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.Caching;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,6 +25,9 @@ public class EmployeeService {
     private EmployeeRepository employeeRepository;
 
     private EmployeeMapper employeeMapper;
+
+    // WebSocket üzenetküldés üzleti logikából
+//    private ApplicationEventPublisher publisher;
 
     // Ütemezett feladatok
 //    private RemoteSyncService remoteSyncService;
@@ -41,6 +46,10 @@ public class EmployeeService {
 
         // Ütemezett feladatok
 //        logNumberOfEmployees();
+
+        // WebSocket üzenetküldés üzleti logikából
+//        publisher.publishEvent(new EmployeeHasBeenCreatedEvent(employee.getId(), employee.getName()));
+
         return employeeMapper.toEmployeeDto(employee);
     }
 

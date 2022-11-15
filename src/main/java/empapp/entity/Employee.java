@@ -48,6 +48,10 @@ public class Employee {
 //    @LastModifiedBy
 //    private String lastModifiedBy;
 
+    // HTTP cache, ETag értéke
+//    @Version
+//    private int version;
+
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     private List<Address> addresses = new ArrayList<>();
 

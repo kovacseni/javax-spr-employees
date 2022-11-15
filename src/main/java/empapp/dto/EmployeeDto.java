@@ -12,5 +12,8 @@ public class EmployeeDto implements Serializable {
 
     private String name;
 
+    // HTTP cache, ETag értéke
+//    private int version;
+
     private List<AddressDto> addresses;
 }
