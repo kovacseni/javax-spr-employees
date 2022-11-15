@@ -23,7 +23,7 @@ import static lombok.AccessLevel.PRIVATE;
 //@EntityListeners(AuditingEntityListener.class)
 
 // Hibernate Envers
-@Audited
+//@Audited
 public class Employee {
 
     @Id

@@ -9,7 +9,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
 // Spring Data JPA auditing
-@EnableJpaAuditing
+//@EnableJpaAuditing
 
 // Ütemezett feladatok
 //@EnableAsync

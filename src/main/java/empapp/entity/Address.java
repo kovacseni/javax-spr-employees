@@ -13,7 +13,7 @@ import static lombok.AccessLevel.PRIVATE;
 @NoArgsConstructor(access = PRIVATE)
 
 // Hibernate Envers
-@Audited
+//@Audited
 public class Address {
 
     @Id
