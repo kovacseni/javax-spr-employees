@@ -3,6 +3,7 @@ package empapp;
 import empapp.dto.CreateEmployeeCommand;
 import empapp.dto.EmployeeDto;
 //import empapp.dto.EmployeeHasBeenCreatedEvent;
+//import empapp.dto.EmployeeHasCreatedEvent;
 import empapp.dto.UpdateEmployeeCommand;
 import empapp.entity.Employee;
 import lombok.AllArgsConstructor;
@@ -32,17 +33,28 @@ public class EmployeeService {
     // Ütemezett feladatok
 //    private RemoteSyncService remoteSyncService;
 
+    // JMS üzenetküldés
+//    private EventStoreGateway eventStoreGateway;
+
     // Cache
 //    @CacheEvict(value = "employee", key = "#id")
 //    @CachePut(key = "#result.id", value = "employee")
     public EmployeeDto createEmployee(CreateEmployeeCommand command) {
         Employee employee = employeeMapper.toEmployee(command);
+
         // Ütemezett feladatok
 //        log.info("EmployeeService thread: {}", Thread.currentThread().getName());
 //        log.info("RemoteSyncService reference: {}", remoteSyncService.getClass().getName());
 //        remoteSyncService.sync(employee); // Ütemezett feladatoknál hívjuk meg ezt a metódust
 //        remoteSyncService.syncProgrammable(employee); // Ütemezett feladatoknál hívjuk meg ezt a metódust
+
+        // Server send events
+//        publisher.publishEvent(new EmployeeHasCreatedEvent(employee.getId(), employee.getName()));
+
         employeeRepository.save(employee);
+
+        // JMS üzenetküldés
+//        eventStoreGateway.sendMessage("Employee has been created: " + command);
 
         // Ütemezett feladatok
 //        logNumberOfEmployees();

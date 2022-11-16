@@ -114,6 +114,19 @@
 			<artifactId>webjars-locator-core</artifactId>
 		</dependency>
 
+<!--		SOAP webszolgáltatások CXF-fel-->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-spring-boot-starter-jaxws</artifactId>
+			<version>3.5.3</version>
+		</dependency>
+
+<!--		JMS üzenetküldés-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-artemis</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
